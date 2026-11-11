@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfdb4m80io0o3"]
+
+[ext_resource type="Script" uid="uid://brrrl3pgu045g" path="res://Enemy.gd" id="1_7k104"]
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_7k104")
+
+[node name="Body" type="ColorRect" parent="."]
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 12.0
+offset_bottom = 12.0
+color = Color(0.8784314, 0.23529412, 0.23529412, 1)
+
+[node name="HpBack" type="ColorRect" parent="."]
+offset_left = -12.0
+offset_top = -22.0
+offset_right = 12.0
+offset_bottom = -18.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="HpFill" type="ColorRect" parent="."]
+offset_left = -12.0
+offset_top = -22.0
+offset_right = 12.0
+offset_bottom = -18.0
+color = Color(1, 0.49803922, 0.61960787, 1)
