@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://drarywy6r0y8w"]
+
+[ext_resource type="Script" uid="uid://ctfgnfqeqegor" path="res://MarkerBar.gd" id="1_sdbam"]
+[ext_resource type="Script" uid="uid://du4ubq8p0ih68" path="res://Dot.gd" id="1_sguns"]
+
+[node name="MakerBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_sdbam")
+
+[node name="Track" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 0.9529412, 0.8392157, 1)
+
+[node name="Fill" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.9098039, 0.32156864, 0.47843137, 1)
+
+[node name="Marker" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 24.0
+offset_bottom = 24.0
+script = ExtResource("1_sguns")
