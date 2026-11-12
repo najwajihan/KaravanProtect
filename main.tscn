@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsipj5byfjpng"]
+[gd_scene load_steps=6 format=3 uid="uid://bsipj5byfjpng"]
 
 [ext_resource type="PackedScene" uid="uid://sfj826piogfu" path="res://caravan.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://dmr2sq6pe7tnw" path="res://Main.gd" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://drarywy6r0y8w" path="res://maker_bar.tscn" id="2_h2yge"]
-[ext_resource type="Script" uid="uid://duxw153hun3pm" path="res://Card.gd" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://ltkd6iwvlucq" path="res://card.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dar7o2kene6nb" path="res://guard.tscn" id="5_lquwl"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_1bvp3")
@@ -65,18 +66,56 @@ offset_top = 580.0
 offset_right = 440.0
 offset_bottom = 603.0
 
-[node name="Card" type="ColorRect" parent="HUD"]
-offset_left = 1040.0
-offset_top = 250.0
-offset_right = 1130.0
-offset_bottom = 370.0
-color = Color(0.9098039, 0.5647059, 0.62352943, 1)
-script = ExtResource("3_h2yge")
+[node name="TravelBar" parent="HUD" instance=ExtResource("2_h2yge")]
+offset_left = 426.0
+offset_top = 60.0
+offset_right = 466.0
+offset_bottom = 100.0
 
-[node name="CostLabel" type="Label" parent="HUD/Card"]
+[node name="CardRow" type="VBoxContainer" parent="HUD"]
+offset_left = 1040.0
+offset_top = 134.0
+offset_right = 1130.0
+offset_bottom = 514.0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="GuardCard" parent="HUD/CardRow" instance=ExtResource("4_1bvp3")]
+layout_mode = 2
+guard_scene = ExtResource("5_lquwl")
+
+[node name="CheckpointPanel" type="Control" parent="HUD"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="HUD/CheckpointPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="TitleLabel" type="Label" parent="HUD/CheckpointPanel"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 48.0
-offset_bottom = 31.0
-text = "10"
+offset_left = 376.0
+offset_top = 110.0
+offset_right = 416.0
+offset_bottom = 133.0
+theme_override_font_sizes/font_size = 32
+text = "CHECKPOINT! Pilih satu hadiah"
+
+[node name="Choices" type="HBoxContainer" parent="HUD/CheckpointPanel"]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 200.0
+offset_right = 956.0
+offset_bottom = 460.0
+theme_override_constants/separation = 20
+alignment = 1

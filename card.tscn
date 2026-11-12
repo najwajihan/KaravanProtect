@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://ltkd6iwvlucq"]
+
+[ext_resource type="Script" uid="uid://duxw153hun3pm" path="res://Card.gd" id="1_kikvd"]
+
+[node name="Card" type="ColorRect"]
+custom_minimum_size = Vector2(90, 120)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.9098039, 0.5647059, 0.62352943, 1)
+script = ExtResource("1_kikvd")
+
+[node name="CostLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 31.0
+text = "1"
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 60.0
+offset_right = 83.0
+offset_bottom = 83.0
+theme_override_font_sizes/font_size = 14
+text = "Pengawal"
